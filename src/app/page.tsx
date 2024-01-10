@@ -6,9 +6,9 @@ import WebsiteSelector from '../components/homePage/websiteSelector/websiteSelec
 export default function Home() {
   return (
     <main>
-      <div className='container mx-auto'>
+      <div className='bg-white'>
         <WebsiteSelector></WebsiteSelector>
-        <HomeContent data={undefined}></HomeContent>
+        <HomeContent></HomeContent>
       </div>
       <div>
         <RecentlyViewedList></RecentlyViewedList>

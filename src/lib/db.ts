@@ -1,27 +1,26 @@
 import { verbose } from 'sqlite3'
+import { Website } from './website';
 
-export const getData = () => {
-  return new Promise((resolve, reject) => {
-    const sqlite3 = verbose();
-    const db = new sqlite3.Database(':memory:');
+export type ListContent = {
+  id: number;
+  title: string;
+  website: Website;
+  createTime: number;
+  updateTime: number;
+  hotRankAchieved: number;
+}
 
-    db.serialize(() => {
-      db.run("CREATE TABLE lorem (info TEXT)");
-
-      const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-      for (let i = 0; i < 10; i++) {
-        stmt.run("Ipsum " + i);
-      }
-      stmt.finalize();
-
-      db.all("SELECT rowid AS id, info FROM lorem", (err, row: any) => {
-        console.log(row);
-        resolve(row);
-      });
-
+export const getListContent = (website: Website, pageNumber: number, pageSize: number): Promise<ListContent[]> => {
+  const ret: ListContent[] = [];
+  for (let i = 0; i < 20; i++) {
+    ret.push({
+      id: i + 1,
+      title: `${i + 1} 网友是这样的，一边说羡慕欧美女星自然老去的风姿，一边又对国内女星的老态指手画脚，她就是没有做医美罢了`,
+      website: Website.weibo,
+      createTime: new Date().getTime(),
+      updateTime: new Date().getTime(),
+      hotRankAchieved: 1,
     });
-
-    db.close();
-  })
-};
-
+  }
+  return Promise.resolve(ret);
+}

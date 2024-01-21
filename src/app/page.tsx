@@ -1,19 +1,11 @@
-import HomeContent from '../components/homePage/homeContent/homeContent'
-import HotList from '../components/homePage/hotList/hotList'
-import RecentlyViewedList from '../components/homePage/recentlyViewedList/recentlyViewedList'
-import WebsiteSelector from '../components/homePage/websiteSelector/websiteSelector'
+import HomeContent from '../components/home-page/home-content/home-content'
+import WebsiteSelector from '../components/home-page/website-selector/website-selector'
 
 export default function Home() {
   return (
-    <main>
-      <div className='bg-white'>
-        <WebsiteSelector></WebsiteSelector>
-        <HomeContent></HomeContent>
-      </div>
-      <div>
-        <RecentlyViewedList></RecentlyViewedList>
-        <HotList></HotList>
-      </div>
+    <main className='bg-white'>
+      <WebsiteSelector></WebsiteSelector>
+      <HomeContent></HomeContent>
     </main>
   )
 }

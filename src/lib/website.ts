@@ -14,3 +14,11 @@ export const getWebsiteByCode = (code: string): Website | null => {
 export const getIconNameByWebsite = (website: Website): string | undefined => {
   return Website[website as keyof typeof Website];
 }
+
+export const getUrlBySymbol = (website: Website, symbol: string): string => {
+  if (website === Website.weibo) {
+    return `https://s.weibo.com/weibo?q=${encodeURIComponent(symbol)}`;
+  }
+
+  return '';
+}

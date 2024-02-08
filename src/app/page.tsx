@@ -1,11 +1,5 @@
-import HomeContent from '../components/home-page/home-content/home-content'
-import WebsiteSelector from '../components/home-page/website-selector/website-selector'
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <main className='bg-white'>
-      <WebsiteSelector></WebsiteSelector>
-      <HomeContent></HomeContent>
-    </main>
-  )
+export default function HomePage() {
+  redirect("/all/1");
 }

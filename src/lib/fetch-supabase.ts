@@ -26,12 +26,21 @@ export const queryHotTop = async (
   pageNumber: number,
   pageSize: number
 ): Promise<HotTopItem[]> => {
-  const hotTops = await supabase
-    .from("hot_top")
-    .select("*")
-    .eq("website", website)
-    .range((pageNumber - 1) * pageSize, pageNumber * pageSize - 1)
-    .order("update_at", { ascending: false });
+  let hotTops;
+  if (website === Website.all) {
+    hotTops = await supabase
+      .from("hot_top")
+      .select("*")
+      .range((pageNumber - 1) * pageSize, pageNumber * pageSize - 1)
+      .order("update_at", { ascending: false });
+  } else {
+    hotTops = await supabase
+      .from("hot_top")
+      .select("*")
+      .eq("website", website)
+      .range((pageNumber - 1) * pageSize, pageNumber * pageSize - 1)
+      .order("update_at", { ascending: false });
+  }
 
   const ret: HotTopItem[] = hotTops.data ?? [];
   for (const item of ret) {

@@ -1,5 +1,10 @@
 export enum Website {
   /**
+   * 全部
+   */
+  all = "all",
+
+  /**
    * 微博热搜
    */
   weibo_hot = "weibo_hot",
@@ -26,6 +31,7 @@ export enum Website {
 }
 
 export const getWebsiteName = (website: Website): string => {
+  if (website === Website.all) return "全部";
   if (website === Website.weibo_hot) return "微博热搜";
   if (website === Website.weibo_entertainment) return "微博文娱";
   if (website === Website.weibo_news) return "微博要闻";

@@ -2,7 +2,6 @@ import { queryHotTop } from "@/lib/fetch-supabase";
 import { Website, getWebsiteName, isWebsite } from "@/lib/website";
 import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export default async function WebsitePage({
   params,

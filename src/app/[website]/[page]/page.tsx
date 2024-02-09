@@ -1,7 +1,6 @@
 import { queryHotTop } from "@/lib/fetch-supabase";
 import { Website, getWebsiteName, isWebsite } from "@/lib/website";
-import { notFound, redirect } from "next/navigation";
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export default async function WebsitePage({
   params,
@@ -51,12 +50,3 @@ export default async function WebsitePage({
     </>
   );
 }
-
-export const metadata: Metadata = {
-  title: `摸鱼-热搜聚合`,
-  description: `热搜聚合,热搜,热榜,历史热搜,历史热榜,热搜历史记录,${Object.values(
-    Website
-  )
-    .map((item) => getWebsiteName(item))
-    .join(",")}`,
-};

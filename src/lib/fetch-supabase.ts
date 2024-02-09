@@ -49,3 +49,5 @@ export const queryHotTop = async (
 
   return ret;
 };
+
+export const fetchCache = 'force-no-store';

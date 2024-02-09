@@ -1,5 +1,3 @@
-"use server";
-
 import { Website, getUriBySymbol } from "./website";
 import { createClient } from "@supabase/supabase-js";
 
@@ -49,5 +47,3 @@ export const queryHotTop = async (
 
   return ret;
 };
-
-export const fetchCache = 'force-no-store';

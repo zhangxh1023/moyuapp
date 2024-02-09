@@ -33,3 +33,5 @@ export const metadata: Metadata = {
     google: "tN1gZzl3jH1LGA9kLLA8-6Ke8oWiycK1RelqJ2X9jmQ",
   },
 };
+
+export const fetchCache = 'force-no-store';

@@ -43,6 +43,11 @@ export enum Website {
    * 虎扑步行街
    */
   hupu_bbs = "hupu_bbs",
+
+  /**
+   * 腾讯热门问答
+   */
+  qq_qa = "qq_qa",
 }
 
 export const getWebsiteName = (website: Website): string => {
@@ -55,11 +60,8 @@ export const getWebsiteName = (website: Website): string => {
   if (website === Website.hupu_basketball) return "虎扑篮球";
   if (website === Website.hupu_soccer) return "虎扑足球";
   if (website === Website.hupu_bbs) return "虎扑步行街";
+  if (website === Website.qq_qa) return "腾讯热门问答";
   return "";
-};
-
-export const isWebsite = (website: string) => {
-  return Object.values(Website).includes(website as Website);
 };
 
 export const getUriBySymbol = (website: Website, symbol: string): string => {
@@ -79,7 +81,13 @@ export const getUriBySymbol = (website: Website, symbol: string): string => {
     return symbol;
   } else if (website === Website.hupu_bbs) {
     return symbol;
+  } else if (website === Website.qq_qa) {
+    return `https://new.qq.com/rain/a/${symbol}`;
   }
 
   return "";
+};
+
+export const isWebsite = (website: string) => {
+  return Object.values(Website).includes(website as Website);
 };

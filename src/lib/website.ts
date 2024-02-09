@@ -48,6 +48,11 @@ export enum Website {
    * 腾讯热门问答
    */
   qq_qa = "qq_qa",
+
+  /**
+   * 36kr快讯热点
+   */
+  kr36_newsflashes = "kr36_newsflashes",
 }
 
 export const getWebsiteName = (website: Website): string => {
@@ -61,6 +66,7 @@ export const getWebsiteName = (website: Website): string => {
   if (website === Website.hupu_soccer) return "虎扑足球";
   if (website === Website.hupu_bbs) return "虎扑步行街";
   if (website === Website.qq_qa) return "腾讯热门问答";
+  if (website === Website.kr36_newsflashes) return "36kr快讯热点";
   return "";
 };
 
@@ -83,6 +89,8 @@ export const getUriBySymbol = (website: Website, symbol: string): string => {
     return symbol;
   } else if (website === Website.qq_qa) {
     return `https://new.qq.com/rain/a/${symbol}`;
+  } else if (website === Website.kr36_newsflashes) {
+    return `https://36kr.com${symbol}`;
   }
 
   return "";

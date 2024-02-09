@@ -28,6 +28,21 @@ export enum Website {
    * 知乎
    */
   zhihu = "zhihu",
+
+  /**
+   * 虎扑篮球
+   */
+  hupu_basketball = "hupu_basketball",
+
+  /**
+   * 虎扑足球
+   */
+  hupu_soccer = "hupu_soccer",
+
+  /**
+   * 虎扑步行街
+   */
+  hupu_bbs = "hupu_bbs",
 }
 
 export const getWebsiteName = (website: Website): string => {
@@ -37,6 +52,9 @@ export const getWebsiteName = (website: Website): string => {
   if (website === Website.weibo_news) return "微博要闻";
   if (website === Website.weibo_topic) return "微博话题";
   if (website === Website.zhihu) return "知乎";
+  if (website === Website.hupu_basketball) return "虎扑篮球";
+  if (website === Website.hupu_soccer) return "虎扑足球";
+  if (website === Website.hupu_bbs) return "虎扑步行街";
   return "";
 };
 
@@ -55,6 +73,12 @@ export const getUriBySymbol = (website: Website, symbol: string): string => {
     return `https://s.weibo.com/weibo?q=${encodeURIComponent(symbol)}`;
   } else if (website === Website.zhihu) {
     return `https://www.zhihu.com/question/${symbol}`;
+  } else if (website === Website.hupu_basketball) {
+    return symbol;
+  } else if (website === Website.hupu_soccer) {
+    return symbol;
+  } else if (website === Website.hupu_bbs) {
+    return symbol;
   }
 
   return "";

@@ -4,7 +4,6 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Website, getWebsiteName } from "@/lib/website";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} style={{ backgroundColor: "#f4f6f9" }}>
+        {children}
+      </body>
       <Analytics />
       <SpeedInsights />
     </html>
@@ -34,4 +35,4 @@ export const metadata: Metadata = {
   },
 };
 
-export const fetchCache = 'force-no-store';
+export const fetchCache = "force-no-store";

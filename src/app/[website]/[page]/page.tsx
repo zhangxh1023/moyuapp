@@ -27,8 +27,11 @@ export default async function WebsitePage({
         width: "70%",
         minWidth: "600px",
         margin: "auto",
+        padding: "24px",
+        boxShadow:
+          "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        borderRadius: "4px",
       }}
-      className="p-6 shadow rounded"
     >
       <WebsiteSelector website={params.website as Website} />
 
@@ -41,8 +44,16 @@ export default async function WebsitePage({
         return (
           <div key={index} style={{ marginTop: "20px" }}>
             <span
-              className="text-sm inline-block px-2 rounded mr-1"
-              style={{ backgroundColor: "#d1d2d5" }}
+              style={{
+                backgroundColor: "#d1d2d5",
+                borderRadius: "4px",
+                marginRight: "4px",
+                paddingLeft: "8px",
+                paddingRight: "8px",
+                display: "inline-block",
+                fontSize: "14px",
+                lineHeight: "20px",
+              }}
             >
               {getWebsiteName(item.website)}
             </span>

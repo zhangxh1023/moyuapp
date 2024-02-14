@@ -17,8 +17,11 @@ export default function WebsiteSelector({ website }: { website: Website }) {
               marginRight: "20px",
               backgroundColor: website === item.code ? "#333344" : "white",
               color: website === item.code ? "white" : "black",
+              display: "inline-block",
+              paddingLeft: "8px",
+              paddingRight: "8px",
+              borderRadius: "4px",
             }}
-            className="inline-block px-2 rounded"
           >
             {item.text}
           </a>

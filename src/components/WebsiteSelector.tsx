@@ -4,7 +4,12 @@ import { Website, getWebsiteName } from "@/lib/website";
 
 export default function WebsiteSelector({ website }: { website: Website }) {
   return (
-    <div>
+    <div
+      style={{
+        padding: "10px",
+        borderBottom: "1px solid #e2e2e2",
+      }}
+    >
       {Object.values(Website)
         .map((item) => {
           return { text: getWebsiteName(item), code: item };
@@ -14,7 +19,7 @@ export default function WebsiteSelector({ website }: { website: Website }) {
             key={item.code}
             href={`/${item.code}/1`}
             style={{
-              marginRight: "20px",
+              marginRight: "10px",
               backgroundColor: website === item.code ? "#333344" : "white",
               color: website === item.code ? "white" : "black",
               display: "inline-block",
